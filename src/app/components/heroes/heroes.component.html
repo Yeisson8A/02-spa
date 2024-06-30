@@ -1,0 +1,24 @@
+<h1>Héroes <small>Marvel y DC</small></h1>
+<hr>
+<div class="card-columns">
+    <!-- <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
+        <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
+        <div class="card-body">
+            <h5 class="card-title">{{ heroe.nombre }}</h5>
+            <p class="card-text">{{ heroe.bio }}</p>
+            <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
+        </div>
+        <button (click)="viewHeroe(i)" type="button" class="btn btn-outline-primary btn-block">View more</button> -->
+    <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary">View more link</a> -->
+    <!-- </div> -->
+
+    <!-- Para pasar el valor del padre al hijo(marcado con @Input) lo hacemos así:
+         [Nombre_Atributo]=Expresion, por ejemplo: [heroe]="heroe"
+     -->
+
+    <!-- Para poner a escuchar el evento del componente hijo(marcado con @Output) lo hacemos así:
+         (Nombre_EventEmitter)=Nombre_Funcion, por ejemplo: (heroeSelected)="viewHeroe($event)";
+         usamos $event para pasarle el evento
+     -->
+    <app-heroe-tarjeta (heroeSelected)="viewHeroe($event)" [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index"></app-heroe-tarjeta>
+</div>
